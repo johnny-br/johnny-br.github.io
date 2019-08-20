@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+  <meta charset="utf-8" />
+  <title>Johnny Site EDVT</title>
+
+  <style>
+  p{
+	background-color: purple;
+	color: white;
+	padding: 8px; 	
+  }
+	  
+  body{
+  	background-image: url("sandblast.jpg");
+
+
+  }
+
+  canvas {
+  	border-radius: 12px;
+	}
+	
+  </style>
+
+</head>
+
+<body>
+  <script src="dna.js"></script>
+  <script src="population.js"></script>
+  <script src="rocket.js"></script>
+  <script src="sketch.js"></script>
+
+  <script type="text/javascript">
+ function detectmob() { 
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+
+ 	//alert("Este site funciona melhor no computador");
+    checkCookie();
+    return true;
+  
+  }
+ else {
+    return false;
+  }
+}
+
+detectmob();
+
+function checkCookie() {
+  var username = getCookie("jaAcessou");
+  if (username != "sim") {
+   alert("Este site funciona melhor no computador");
+   setCookie("jaAcessou", "sim", 1);
+  }
+  }
+
+ function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+} 
+
+
+
+  </script>
+
+
+</body>
+
+</html>
