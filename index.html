@@ -35,16 +35,25 @@
   	border-radius: 12px;
 	}
 	
+  .myCanvas{
+  	border-radius: 12px;
+  	background: #cdcdcd;
+  	position: absolute;
+  	left: 10px;
+  	top: 40px;
+  }
+
   </style>
 
 </head>
 
 <body>
+	 <canvas class="myCanvas" width="1280" height="600"</canvas>
+
   <script src="dna.js"></script>
   <script src="population.js"></script>
   <script src="rocket.js"></script>
   <script src="sketch.js"></script>
-
   <script type="text/javascript">
  function detectmob() { 
  if( navigator.userAgent.match(/Android/i)
